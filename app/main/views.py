@@ -82,14 +82,14 @@ def downvote(pitch_id):
     new_downvote.save_downvotes()
     return redirect(url_for('main.index'))
 
-# @main.route('/user/<uname>')
-# @login_required
-# def profile(uname):
-#     user = User.query.filter_by(username = uname).first()
+@main.route('/user/<uname>')
+@login_required
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
 
-#     if user is None:
-#         abort(404)
-#     return render_template("profile/profiles.html",user=user)
+    if user is None:
+        abort(404)
+    return render_template("profile/profiles.html",user=user)
 
 # @main.route('/user/<uname>/update',methods=['GET','POST'])
 # @login_required
