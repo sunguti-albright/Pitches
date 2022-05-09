@@ -47,12 +47,12 @@ def new_comment(pitch_id):
     if form.validate_on_submit():
         comment = form.comment.data
         new_comment=Comment(comment=comment,user_id=current_user.get_current_object().id,pitch_id=pitch_id)
-#         db.session.add(new_comment)
-#         db.session.commit()
+        db.session.add(new_comment)
+        db.session.commit()
 
-#         return redirect(url_for('.new_comment',pitch_id=pitch_id))
-#     display_comments=Comment.query.filter_by(pitch_id=pitch_id).all()
-#     return render_template('comments.html',form=form,pitch=pitch,display_comments=display_comments)
+        return redirect(url_for('.new_comment',pitch_id=pitch_id))
+    display_comments=Comment.query.filter_by(pitch_id=pitch_id).all()
+    return render_template('comments.html',form=form,pitch=pitch,display_comments=display_comments)
 
 # @main.route('/pitch/upvote/<int:pitch_id>/upvote',methods=['GET','POST'])
 # @login_required
