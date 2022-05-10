@@ -4,7 +4,6 @@ from flask_login import login_required,current_user
 from ..models import User,Pitch,Comment,Upvote,Downvote  
 from .forms import UpdateProfile,PitchNow,MyComment,UpVote,DownVote
 from .. import db
-# from .. import photos
 
 
 @main.route('/',methods =['GET','POST'])
@@ -16,6 +15,7 @@ def index():
     interview_pitch = Pitch.query.filter_by(category='Interview')
     promotion_pitch = Pitch.query.filter_by(category='Promotion')
     sales_pitch = Pitch.query.filter_by(category='Sales')
+    market_pitch = Pitch.query.filter_by(category='Marketing')
 
     upvotes = Upvote.get_all_upvotes(pitch_id=Pitch.id)
 
@@ -31,7 +31,7 @@ def new_pitch():
         title = form.title.data
         owner_id = current_user
         category = form.category.data
-        print(current_user.get_current_object().id)
+        print(current_user._get_current_object().id)
         new_pitch = Pitch(owner_id =current_user._get_current_object().id, title = title,description=description,category=category)
         db.session.add(new_pitch)
         db.session.commit()

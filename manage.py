@@ -1,12 +1,13 @@
 from app import create_app,db
 from flask_script import Manager,Server #Shell
-from app.models import User,Role,Pitch,Comment
+from app.models import * #User
 # from flask_migrate import Migrate #MigrateCommand
 
 from flask.cli import FlaskGroup
 
 
 # Creating app instance
+# FLASK_APP =app:create_app('development')
 app = create_app('development')
 cli = FlaskGroup(app)
 

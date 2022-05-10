@@ -2,40 +2,45 @@
 {%import 'macros.html' as macro%}
 {%block content%}
 <div class="container">
-    <div class="card-header" style="color:cadetblue">
+    <div class="card-header" style="color:rgb(95, 160, 130)">
         <h3 style="text-align: center">Pitch Categories</h3>
         <br>
         <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#business"></a>
+                <a class="nav-link active" data-toggle="tab" href="#business">BUSINESS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#interview"></a>
+                <a class="nav-link" data-toggle="tab" href="#productions">PRODUCTIONS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#pickupline"></a>
+                <a class="nav-link" data-toggle="tab" href="#interview">INTERVIEW</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#promotion"></a>
+                <a class="nav-link" data-toggle="tab" href="#promotion">PROMOTION</a>
             </li>
-            <li>
-                <a href="#"></a>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#sales">SALES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#marketing">MARKETING</a>
             </li>
         </ul>
+    </div>
+    <div>
 
         <div class="tab-content">
             <div id="business" class="container tab-pane active"><br>
-                {{ macro.display(businesspitch) }}
+                {{ macro.display(business_pitch) }}
 
             </div>
             <div id="interview" class="container tab-pane fade"><br>
-                {{ macro.display(interviewpitch) }}
+                {{ macro.display(interview_pitch) }}
             </div>
             <div id="pickupline" class="container tab-pane fade"><br>
-                {{ macro.display(alineforyourcrush)}}
+                {{ macro.display(sales_pitch) }}
             </div>
             <div id="promotion" class="container tab-pane fade"><br>
-                {{ macro.display(promotionpitch) }}
+                {{ macro.display(promotion_pitch) }}
             </div>
 
         </div>
